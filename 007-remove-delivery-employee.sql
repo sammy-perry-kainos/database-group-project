@@ -1,10 +1,10 @@
 START TRANSACTION;
 
 ALTER TABLE DeliveryEmployees_Projects
-ADD COLUMN Status varchar(20);
+ADD COLUMN Status varchar(20) NOT NULL;
 
 COMMIT;
-s
+
 DELIMITER $$
 DROP PROCEDURE IF EXISTS remove_delivery_employee;
 CREATE PROCEDURE remove_delivery_employee(
@@ -32,4 +32,4 @@ BEGIN
 
 	COMMIT;
 END $$
-DELIMITER ;
+DELIMITER; 
