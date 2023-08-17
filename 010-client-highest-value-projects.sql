@@ -2,7 +2,6 @@ DELIMITER $$
 DROP PROCEDURE IF EXISTS get_highest_value_client;
 CREATE PROCEDURE get_highest_value_client()
 BEGIN
-	START TRANSACTION;
 
 	SELECT Clients.Name 
     FROM Clients
@@ -11,7 +10,6 @@ BEGIN
     ORDER BY SUM(Projects.Value) DESC
     LIMIT 1;
 
-	COMMIT;
 END $$
 
 DELIMITER ; 
