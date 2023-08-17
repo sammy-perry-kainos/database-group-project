@@ -1,10 +1,10 @@
 START TRANSACTION;
 
 CREATE TABLE IF NOT EXISTS Clients (
-	ClientID int PRIMARY KEY AUTO_INCREMENT,
-    Name varchar(70),
-    Address varchar(255),
-    PhoneNumber char(11)
+	ClientID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Name varchar(70) NOT NULL,
+    Address varchar(255) NOT NULL,
+    PhoneNumber char(11) NOT NULL
 );
 
 COMMIT;
