@@ -1,5 +1,5 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS list_client_average_values;
+DROP PROCEDURE IF EXISTS list_client_average_values $$
 CREATE PROCEDURE list_client_average_values()
 BEGIN
 	SELECT Clients.Name as 'Client', AVG(Projects.Value) as 'Project Average'
