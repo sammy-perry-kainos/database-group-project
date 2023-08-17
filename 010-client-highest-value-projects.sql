@@ -13,5 +13,3 @@ BEGIN
 END $$
 
 DELIMITER ; 
-
-CALL get_highest_value_client();
