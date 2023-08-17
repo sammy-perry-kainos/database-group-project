@@ -1,36 +1,29 @@
+START TRANSACTION;
 -- Product Backlog 4
 
 -- Projects table
 CREATE TABLE Projects (
-	ProjectID int,
-    Name varchar(100),
-    Value decimal(15,2));
+	ProjectID int AUTO_INCREMENT PRIMARY KEY,
+    Name varchar(100) NOT NULL,
+    Value decimal(15,2) NOT NULL,
+    TechLead int NOT NULL); 
+    
     
 -- Technologies table
 CREATE TABLE Technologies (
-	TechnologiesID int,
-    Name varchar(100),
-    Description varchar(255));
+	TechnologiesID int AUTO_INCREMENT PRIMARY KEY,
+    Name varchar(100) NOT NULL,
+    Description varchar(255) NOT NULL);
     
--- Add primary key to Projects table
-ALTER TABLE Projects
-ADD CONSTRAINT PK_Projects PRIMARY KEY (ProjectID);
-
--- Add primary key to Technologies table
-ALTER TABLE Technologies
-ADD CONSTRAINT PK_Technologies PRIMARY KEY (TechnologiesID);
 
 -- Project-Tech table
 CREATE TABLE ProjectTech (
-	ProjectTechID int,
-    ProjectID int,
-    TechnologiesID int,
+	ProjectTechID int AUTO_INCREMENT PRIMARY KEY,
+    ProjectID int NOT NULL,
+    TechnologiesID int NOT NULL,
     FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID),
 	FOREIGN KEY (TechnologiesID) REFERENCES Technologies(TechnologiesID));
-
-
-    
-
-    
+   
+COMMIT;    
     
     
