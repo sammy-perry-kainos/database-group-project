@@ -6,7 +6,7 @@ ADD COLUMN Status varchar(20) NOT NULL;
 COMMIT;
 
 DELIMITER $$
-DROP PROCEDURE IF EXISTS remove_delivery_employee;
+DROP PROCEDURE IF EXISTS remove_delivery_employee $$
 CREATE PROCEDURE remove_delivery_employee(
 	IN deliveryEmployeeID int,
     IN projectID int
