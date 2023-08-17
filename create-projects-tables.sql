@@ -23,12 +23,11 @@ CREATE TABLE Technologies (
 
 -- Project-Tech table
 CREATE TABLE ProjectTech (
-	ProjectTechID int AUTO_INCREMENT PRIMARY KEY,
     ProjectID int NOT NULL,
     TechnologiesID int NOT NULL,
     FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID),
-	FOREIGN KEY (TechnologiesID) REFERENCES Technologies(TechnologiesID));
-   
+	FOREIGN KEY (TechnologiesID) REFERENCES Technologies(TechnologiesID),
+	PRIMARY KEY (ProjectID, TechnologiesID));
 COMMIT;    
     
     
