@@ -56,6 +56,12 @@ VALUES (
     30000.00,
     "44444444",
     "PJ444444D"
+),
+(
+	"Jeremy Rigg",
+    30000.00,
+    "55555555",
+    "PJ555555D"
 );
 
 -- Create clients
@@ -116,4 +122,18 @@ VALUES (
 (
     "JavaScript",
 	"Language"
+),
+(
+    "PHP",
+	"Language"
 );
+
+-- Assign delivery employees to projects
+INSERT INTO DeliveryEmployees_Projects (DeliveryEmployeeID, ProjectID)
+VALUES
+(4, 1),
+(1, 1),
+(5, 2),
+(1, 1),
+(3, 3)
+
