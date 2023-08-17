@@ -1,5 +1,5 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS get_lowest_value_client;
+DROP PROCEDURE IF EXISTS get_lowest_value_client $$
 CREATE PROCEDURE get_lowest_value_client()
 BEGIN
 

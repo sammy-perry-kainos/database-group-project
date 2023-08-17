@@ -1,5 +1,5 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS assign_client;
+DROP PROCEDURE IF EXISTS assign_client $$
 CREATE PROCEDURE assign_client(
 	IN clientID int,
 	IN projectID int
