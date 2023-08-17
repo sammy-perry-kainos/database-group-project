@@ -1,9 +1,16 @@
-START TRANSACTION;
+DELIMITER $$
+DROP PROCEDURE IF EXISTS list_clients;
+CREATE PROCEDURE list_clients()
+BEGIN
+	START TRANSACTION;
 
-SELECT Clients.Name as 'Client', SalesEmployees.Name as 'Sales Employee', GROUP_CONCAT(Projects.Name) as 'Projects'
-FROM Clients
-JOIN SalesEmployees USING (SalesEmployeeID)
-JOIN Projects WHERE (Projects.ClientID)
-GROUP BY Projects.Name;
+	SELECT Clients.Name as 'Client', SalesEmployees.Name as 'Sales Employee', GROUP_CONCAT(Projects.Name SEPARATOR ', ') as 'Projects'
+	FROM Clients
+	INNER JOIN SalesEmployees USING (SalesEmployeeID)
+	LEFT JOIN Projects USING (ClientID)
+	GROUP BY Clients.ClientID;
 
-COMMIT;
+	COMMIT;
+END $$
+
+DELIMITER ;
