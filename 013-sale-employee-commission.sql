@@ -19,7 +19,7 @@ BEGIN
     FROM Clients
     JOIN SalesEmployees USING (SalesEmployeeID)
     JOIN Projects USING (ClientID)
-    WHERE YEAR(Projects.StartDate) = YEAR(CURRENT_DATE()) OR YEAR(Projects.EndDate) = YEAR(CURRENT_DATE()) 
+    WHERE YEAR(Projects.StartDate) = YEAR(CURRENT_DATE())
     GROUP BY SalesEmployees.Name;
 
 END $$
