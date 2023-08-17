@@ -1,7 +1,4 @@
 START TRANSACTION;
-CREATE DATABASE Kainoos_ManpreetM;
-
-USE Kainoos_ManpreetM;
 
 -- ProductBacklog1
 CREATE TABLE SalesEmployees (
