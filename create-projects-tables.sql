@@ -7,13 +7,13 @@ CREATE TABLE Projects (
     Name varchar(100) NOT NULL,
     Value decimal(15,2) NOT NULL,
     TechLead int NOT NULL,
-    ClientID int NOT NULL );
+    ClientID int NOT NULL,
+    FOREIGN KEY (TechLead) REFERENCES DeliveryEmployees(DeliveryEmployeeID),
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+    );
     
-ALTER TABLE Projects 
-		ADD CONSTRAINT fk_clients 
-		FOREIGN KEY (ClientID) REFERENCES Clients(ClientID);
-    
-    
+
+	
 -- Technologies table
 CREATE TABLE Technologies (
 	TechnologiesID int AUTO_INCREMENT PRIMARY KEY,
