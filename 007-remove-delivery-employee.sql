@@ -16,8 +16,8 @@ BEGIN
 
 	UPDATE Projects
 	SET Status = "Removed"
-	WHERE DeliveryEmployeeID = deliveryEmployeeID,
-    ProjectID = projectID;
+	WHERE DeliveryEmployeeID = deliveryEmployeeID 
+    AND ProjectID = projectID;
     
     GET DIAGNOSTICS @rows = ROW_COUNT;
 	IF @rows = 0 THEN
